@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>File2Code</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/themes/prism-tomorrow.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <nav class="navbar">
+        <img src="logo.png" alt="File2Code Logo" class="logo" />
+        <ul class="nav-links">
+          <li><a href="#product" class="active">Product</a></li>
+          <li><a href="features.html">Features</a></li>
+        </ul>
+      </nav>
+      <div class="header-content">
+        <h1>Combine Files, Simplified</h1>
+        <p class="subtitle">
+          Drag, drop, and merge your files in seconds. A seamless tool designed
+          for developers and creators.
+        </p>
+      </div>
+    </header>
+
+    <main class="container">
+      <section id="product" class="product">
+        <div class="product-card">
+          <div id="dropArea" class="drop-area">
+            <p>Drop files here or click to upload</p>
+            <input type="file" id="fileInput" webkitdirectory multiple hidden />
+          </div>
+          <div id="fileList" class="file-list"></div>
+          <div class="buttons" style="display: none">
+            <button class="btn primary" onclick="generateCombinedContent()">
+              Merge
+            </button>
+            <button class="btn secondary" onclick="downloadTextFile()">
+              Download
+            </button>
+            <button class="btn tertiary" onclick="toggleSelectAll()">
+              Select All
+            </button>
+          </div>
+          <div class="output-section">
+            <div class="output-box-container">
+              <button class="copy-btn" onclick="copyCode()">Copy</button>
+              <div id="output" class="output-box">No content yet</div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>© 2025 File2Code</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/prism.min.js"></script>
+  </body>
+</html>
