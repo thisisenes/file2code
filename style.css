@@ -94,6 +94,7 @@ h3 {
   max-width: 1280px;
   margin: 0 auto;
   padding: 40px;
+  position: relative; /* Bannerların konumu için referans */
 }
 
 /* Product Section */
@@ -235,97 +236,22 @@ h3 {
   background: #38a169;
 }
 
-/* Features Section */
-.features {
-  padding: 40px 0;
-  text-align: center;
+/* Reklam Bannerları */
+.ad-banner {
+  width: 160px; /* AdSense banner genişliği */
+  height: 600px; /* AdSense banner yüksekliği */
+  position: fixed; /* Sabit konumlandırma */
+  top: 50%; /* Ekranın ortasından başlat */
+  transform: translateY(-50%); /* Dikeyde tam ortala */
+  z-index: 10; /* Diğer içeriklerin üstünde kalsın */
 }
 
-.feature-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 40px; /* Daha fazla boşluk için artırıldı */
-  margin-top: 40px;
+.left-ad {
+  left: 10px; /* Soldan 10px boşluk */
 }
 
-.feature-item {
-  padding: 30px; /* Daha geniş alan için artırıldı */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  transition: transform 0.3s ease;
-}
-
-.feature-item:hover {
-  transform: translateY(-5px); /* Hafif bir hover efekti eklendi */
-}
-
-.feature-icon {
-  width: 48px; /* Minimalist ikon boyutu */
-  height: 48px;
-  margin-bottom: 20px;
-}
-
-.feature-item h3 {
-  color: #2b6cb0;
-  margin-bottom: 10px;
-}
-
-.feature-item p {
-  color: #6b7280;
-  font-size: 1rem;
-  max-width: 240px; /* Okunabilirlik için metin genişliği sınırlandı */
-}
-
-/* Pricing Section */
-.pricing {
-  padding: 40px 0;
-  text-align: center;
-}
-
-.pricing-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-  margin-top: 40px;
-}
-
-.pricing-plan {
-  background: #fff;
-  padding: 40px;
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease;
-}
-
-.pricing-plan.highlight {
-  border: 2px solid #2b6cb0;
-  transform: scale(1.05);
-}
-
-.pricing-plan:hover {
-  transform: scale(1.05);
-}
-
-.price {
-  font-size: 2rem;
-  font-weight: 700;
-  margin: 20px 0;
-}
-
-.price span {
-  font-size: 1rem;
-  color: #6b7280;
-}
-
-.pricing-plan ul {
-  list-style: none;
-  margin: 20px 0;
-}
-
-.pricing-plan li {
-  margin: 10px 0;
-  color: #6b7280;
+.right-ad {
+  right: 10px; /* Sağdan 10px boşluk */
 }
 
 /* Footer */
@@ -334,4 +260,11 @@ footer {
   padding: 40px 0;
   color: #6b7280;
   font-size: 0.9rem;
+}
+
+/* Responsive Tasarım */
+@media (max-width: 1200px) {
+  .ad-banner {
+    display: none; /* Küçük ekranlarda bannerları gizle */
+  }
 }
