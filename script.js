@@ -135,16 +135,3 @@ function copyCode() {
 
   window.getSelection().removeAllRanges();
 }
-
-// Kaydırma işlemi (Bu kısım kaldırıldı)
-/* outputDiv.addEventListener("scroll", function () {
-  const scrollTop = outputDiv.scrollTop;
-  const scrollHeight = outputDiv.scrollHeight;
-  const clientHeight = outputDiv.clientHeight;
-
-  if (scrollTop === 0) {
-    window.scrollTo(0, 0);
-  } else if (scrollTop + clientHeight === scrollHeight) {
-    window.scrollTo(0, document.body.scrollHeight);
-  }
-}); */
