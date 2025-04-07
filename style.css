@@ -20,9 +20,19 @@ h3 {
   font-weight: 700;
 }
 
-h1 {
-  font-size: 3.5rem;
+/* Sayfaya özel başlık stilleri */
+.header-content h1 {
   letter-spacing: -0.02em;
+}
+
+/* Index.html için özel h1 boyutu */
+body:not(.features-page) .header-content h1 {
+  font-size: 3.5rem;
+}
+
+/* Features.html için özel h1 boyutu */
+body.features-page .header-content h1 {
+  font-size: 2.5rem; /* Daha küçük bir başlık */
 }
 
 h2 {
@@ -31,6 +41,28 @@ h2 {
 
 h3 {
   font-size: 1.25rem;
+}
+
+/* Mobil Mesaj Ekranı */
+.mobile-message {
+  display: none; /* Varsayılan olarak gizli */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Tam ekran yüksekliği */
+  background-color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+
+.mobile-message h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.mobile-message p {
+  font-size: 1.2rem;
+  color: #6b7280;
 }
 
 /* Header */
@@ -80,13 +112,23 @@ h3 {
   margin-top: 60px;
 }
 
+/* Sayfaya özel subtitle stilleri */
 .subtitle {
-  font-size: 1.5rem;
   color: #6b7280;
   margin-top: 20px;
   max-width: 700px;
   margin-left: auto;
   margin-right: auto;
+}
+
+/* Index.html için özel subtitle boyutu */
+body:not(.features-page) .subtitle {
+  font-size: 1.5rem;
+}
+
+/* Features.html için özel subtitle boyutu */
+body.features-page .subtitle {
+  font-size: 1.2rem; /* Daha küçük bir alt başlık */
 }
 
 /* Container */
@@ -262,9 +304,83 @@ footer {
   font-size: 0.9rem;
 }
 
-/* Responsive Tasarım */
-@media (max-width: 1200px) {
+/* Mobil Cihazlar için Düzen */
+@media (max-width: 768px) {
+  .desktop-content {
+    display: none; /* Masaüstü içeriğini gizle */
+  }
+
+  .mobile-message {
+    display: flex; /* Mobil mesaj ekranını göster */
+  }
+
   .ad-banner {
-    display: none; /* Küçük ekranlarda bannerları gizle */
+    display: none; /* Bannerları mobil cihazlarda gizle */
+  }
+}
+/* Features Section */
+.features {
+  padding: 40px 0;
+  text-align: center;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  gap: 30px;
+  margin-top: 40px;
+  justify-content: center; /* Center the grid */
+  max-width: 960px; /* Limit width for better alignment */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.feature-item {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+  text-align: center;
+  display: flex; /* Add flexbox for alignment */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px; /* Ensure uniform height */
+}
+
+.feature-item:hover {
+  transform: translateY(-3px);
+}
+
+.feature-icon {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 15px;
+  display: block;
+}
+
+.feature-item h3 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  color: #1a1a1a;
+}
+
+.feature-item p {
+  font-size: 0.9rem;
+  color: #6b7280;
+  margin: 0; /* Remove default margin */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .feature-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on tablets */
+  }
+}
+
+@media (max-width: 480px) {
+  .feature-grid {
+    grid-template-columns: 1fr; /* 1 column on mobile */
   }
 }
